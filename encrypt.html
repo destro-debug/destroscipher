@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DestroCipher | Dual-Prime Cipher Engine | Encrypt</title>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="encrypt.css">
+    <link rel="icon" type="image/png" href="p.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🔒 <span>DestroCipher</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encrypt.html" class="active active-encrypt">Encrypt</a></li>
+                <li><a href="decrypt.html">Decrypt</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="tool-container">
+        <header class="tool-header">
+            <h1>Secure Text Scrambler</h1>
+            <p>Convert printable strings into chaotic, non-repeating base-95 code streams.</p>
+        </header>
+
+        <div class="workspace-grid">
+            <div class="input-panel">
+                
+                <div class="input-group">
+                    <label for="plainText">1. Enter Your Private Message</label>
+                    <textarea id="plainText" placeholder="Type or paste your secret text here... (All symbols, spaces, numbers, and capital letters are supported)"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="secretKey">2. Create Secret Passphrase Key</label>
+                    <div class="key-input-wrapper">
+                        <input type="password" id="secretKey" placeholder="Enter your secret word or phrase...">
+                        <button type="button" id="toggleKeyBtn" title="Toggle Key Visibility">👁️</button>
+                    </div>
+                </div>
+
+                <div class="security-warning-box">
+                    <div class="warning-title">⚠️ CRITICAL SECURITY WARNING</div>
+                    <ul class="warning-list">
+                        <li><strong>Never Forget Your Key:</strong> You must remember this exact passphrase. If you lose it, your message is locked forever. Our servers do not store your data, meaning there is no way to recover or reset a forgotten key.</li>
+                        <li><strong>Share with Receivers:</strong> Do not forget to securely share this exact key with the person you want to send the scrambled text to. They cannot decode your message without it.</li>
+                        <li><strong>No Recovery Access:</strong> Forgetting this key means you will be forever unable to redeem your original text, unless you possess advanced secondary cryptanalysis approaches.</li>
+                    </ul>
+                </div>
+
+                <button type="button" id="encryptBtn" class="action-btn-encrypt">Scramble Text 🔒</button>
+
+            </div>
+
+            <div class="output-panel">
+                <div class="input-group full-height">
+                    <label for="cipherText">3. Generated Scrambled Output</label>
+                    <div class="output-wrapper">
+                        <textarea id="cipherText" readonly placeholder="Your scrambled base-95 output stream will appear here after clicking execution..."></textarea>
+                        <button type="button" id="copyBtn" class="copy-action-btn">Copy to Clipboard</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dual-Prime Cipher App. Client-Side Open Cryptographic Tool.</p>
+    </footer>
+
+    <script src="engine.js"></script>
+    <script src="encrypt.js"></script>
+</body>
+</html>

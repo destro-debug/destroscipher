@@ -1,0 +1,118 @@
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 4rem;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.portal-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    text-align: left;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s ease, border-color var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-card:hover {
+    transform: translateY(-4px);
+}
+
+.encrypt-portal:hover {
+    border-color: var(--accent-encrypt);
+}
+
+.decrypt-portal:hover {
+    border-color: var(--accent-decrypt);
+}
+
+.portal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.portal-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.portal-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.portal-btn {
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+.encrypt-portal .portal-btn { color: var(--accent-encrypt); }
+.decrypt-portal .portal-btn { color: var(--accent-decrypt); }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    text-align: left;
+    border-top: 1px solid var(--border-color);
+    padding-top: 4rem;
+}
+
+.info-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.info-card p {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .hero-title { font-size: 2.25rem; }
+    .hero-subtitle { font-size: 1.1rem; margin-bottom: 2.5rem; }
+    .portal-grid { gap: 1rem; margin-bottom: 3rem; }
+    .info-grid { padding-top: 2.5rem; }
+}

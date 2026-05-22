@@ -1,0 +1,222 @@
+.tool-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.tool-header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.tool-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.tool-header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.workspace-grid {
+    display: flex;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.input-panel, .output-panel {
+    flex: 1;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group.full-height {
+    flex-grow: 1;
+}
+
+.input-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+textarea, input[type="password"], input[type="text"] {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+.input-panel textarea {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.output-panel textarea {
+    flex-grow: 1;
+    min-height: 350px;
+}
+
+textarea:focus, input:focus {
+    border-color: var(--accent-decrypt);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.key-input-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.key-input-wrapper input {
+    width: 100%;
+    padding-right: 3.5rem;
+}
+
+#toggleKeyBtn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition-speed) ease;
+}
+
+#toggleKeyBtn:hover {
+    color: var(--text-main);
+}
+
+.security-warning-box {
+    background-color: #1c1917;
+    border: 1px solid #d97706;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1.75rem;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.security-warning-box.active-glow {
+    box-shadow: 0 0 12px rgba(217, 119, 6, 0.25);
+}
+
+.warning-title {
+    color: #fbbf24;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.warning-list {
+    list-style-type: none;
+}
+
+.warning-list li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.warning-list li:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.warning-list li::before {
+    content: "▪";
+    color: #d97706;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
+
+.warning-list li strong {
+    color: var(--text-main);
+}
+
+.action-btn-decrypt {
+    background-color: var(--accent-decrypt);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: opacity var(--transition-speed) ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.action-btn-decrypt:hover {
+    opacity: 0.9;
+}
+
+.action-btn-decrypt:active {
+    transform: scale(0.99);
+}
+
+.output-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.copy-action-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.copy-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+    .workspace-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .tool-container {
+        padding: 2rem 1rem;
+    }
+    .output-panel textarea {
+        min-height: 200px;
+    }
+}

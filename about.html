@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DestroCipher | Dual-Prime Cipher Engine | About the Math</title>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="icon" type="image/png" href="p.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🔒 <span>DestroCipher</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encrypt.html">Encrypt</a></li>
+                <li><a href="decrypt.html">Decrypt</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="about-container">
+        <header class="about-header">
+            <h1>About DestroCipher</h1>
+            <p class="lead">An inside look at the privacy architecture and the interlocking dual-prime mathematics driving this system.</p>
+        </header>
+
+        <section class="doc-section">
+            <h2>🛡️ The Zero-Knowledge Privacy Model</h2>
+            <p>Traditional data security models require you to trust a company's server with your passwords and private text. This web application operates on a strict <strong>Zero-Knowledge client-side architecture</strong>.</p>
+            <p>When you type a message or enter a secret passphrase key, your data never crosses the internet. It is never sent to a cloud server, and it is never saved to a database. The entire cryptographic process runs locally inside your device's browser window via native JavaScript code. Once you close your browser tab, your key and message are instantly erased from system memory.</p>
+        </section>
+
+        <section class="doc-section math-section">
+            <h2>🧮 The Core Mathematical Mechanics</h2>
+            <p>To eliminate repeating character patterns and withstand modern dictionary brute-force scripts, this web app implements an advanced <strong>Base-95 Interlocking Dual-Prime Stream Cipher</strong>.</p>
+            
+            <div class="spec-block">
+                <h3>1. Positional Core Base Conversion</h3>
+                <p>Your typed text passphrase is converted into a single massive integer representation (Key value $k$). This value acts as the foundational starting seed for our background calculation engines.</p>
+            </div>
+
+            <div class="spec-block">
+                <h3>2. Interlocking Engine State Equations</h3>
+                <p>For each single text character positioned at index counter ($i$), two completely separate mathematical engines iterate independently using two unique large prime number boundaries (<strong>997</strong> and <strong>1009</strong>):</p>
+                
+                <div class="formula-box">
+                    <p class="math-eq">X<sub>i</sub> = (X<sub>i-1</sub> × 31 + θ<sub>i-1</sub> + i) mod 997</p>
+                    <p class="math-eq">Y<sub>i</sub> = (Y<sub>i-1</sub> × 41 + θ<sub>i-1</sub> + i) mod 1009</p>
+                </div>
+                
+                <p>Both state outputs then instantly fuse together to extract an unpredictable, non-repeating dynamic mathematical letter shift integer ($S_i$):</p>
+                <div class="formula-box">
+                    <p class="math-eq">S<sub>i</sub> = ((X<sub>i</sub> + Y<sub>i</sub>) mod 94) + 1</p>
+                </div>
+            </div>
+
+            <div class="spec-block">
+                <h3>3. Reversible Stream Processing Operations</h3>
+                <p>By swapping out standard alphabetic frameworks for a full 95-character printable ASCII suite, the core calculations safely encrypt and flawlessly reverse your target files:</p>
+                
+                <div class="formula-box">
+                    <p class="math-eq"><strong>Encryption:</strong> θ<sub>i</sub> = ((λ<sub>i</sub> + S<sub>i</sub> - 1) mod 95) + 1</p>
+                    <p class="math-eq"><strong>Decryption:</strong> λ<sub>i</sub> = ((θ<sub>i</sub> - S<sub>i</sub> - 1 + 95) mod 95) + 1</p>
+                </div>
+                
+                <p>Where <strong>λ (Lambda)</strong> represents the numerical input value, and <strong>θ (Theta)</strong> represents the final output character value displayed on your clipboard interface screen.</p>
+            </div>
+        </section>
+
+        <section class="doc-section warning-box">
+            <h2>⚠️ Critical Operational Conditions</h2>
+            <ul>
+                <li><strong>No Key Recovery Channels:</strong> Because we do not log accounts or maintain server tracking systems, forgotten passphrases cannot be recovered. Keep your keys safe.</li>
+                <li><strong>Dynamic avalanche output:</strong> Changing even a single character or symbol inside your passphrase completely reshuffles the calculated stream engines, turning your decrypted result into broken data garbage.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dual-Prime Cipher App. Client-Side Open Cryptographic Tool.</p>
+    </footer>
+
+    <script src="about.js"></script>
+</body>
+</html>
